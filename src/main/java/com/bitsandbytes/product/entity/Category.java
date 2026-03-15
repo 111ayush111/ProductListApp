@@ -18,6 +18,6 @@ public class Category {
 
 
 //    one category can have many product , so it is mapped by category
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Product> products= new ArrayList<>();
 }

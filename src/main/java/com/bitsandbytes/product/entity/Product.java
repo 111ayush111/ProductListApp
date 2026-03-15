@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 //entity is connected to database
 @Entity
 @Getter @Setter
-public class Product {
+public class  Product {
 
 //    data structure(product details) is the attributes of entity (product)
     @Id
@@ -21,8 +21,8 @@ public class Product {
 
 //category_id is in product as foreign key as id of category
 //many product can have same category
-    @ManyToOne
-    @JoinColumn(name = "category_id", nullable = false)// join by name category id
+    @ManyToOne(fetch = FetchType.LAZY)  //it is used to avoid unnecessary data (bcz it joins mapped entity)
+    @JoinColumn(name = "category_id", nullable = false) // join by name category id
     private Category category;
 
 
